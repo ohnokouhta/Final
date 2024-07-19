@@ -1,4 +1,3 @@
-
 {
   "name": "mybot",
   "version": "0.1.0",
@@ -18,6 +17,7 @@
     "node": "16.x"
   },
   "dependencies": {
+    "clarifai-nodejs-grpc": "^10.6.3",
     "forever": "^4.0.0",
     "hubot-direct": ">=3 <4",
     "lisb-hubot": ">=5 <6",

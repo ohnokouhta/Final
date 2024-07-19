@@ -12,7 +12,7 @@ module.exports = (robot) => {
             const imageBytes = fs.readFileSync(path, { encoding: "base64" });
             stub.PostModelOutputs(
                 {
-                    model_id: "general-image-recognition-model",
+                    model_id: "car-train-none-model", 
                     inputs: [{ data: { image: { base64: imageBytes } } }]
                 },
                 metadata,
@@ -40,11 +40,11 @@ module.exports = (robot) => {
                     }
 
                     if (isCar) {
-                        askQuestion(res, "好きな車の種類は？", ["SUV", "セダン", "クーペ", "ハッチバック"]);
+                        askQuestion(res, "好きな車の種類は？", ["フェラーリ", "ポルシェ", "ランボルギーニ", "ベンツ", "レクサス"]);
                     } else if (isTrain) {
-                        askQuestion(res, "好きな電車の種類は？", ["新幹線", "通勤電車", "特急", "貨物列車"]);
+                        askQuestion(res, "好きな電車の種類は？", ["京王線", "南武線", "小田急線", "中央線", "千代田線"]);
                     } else {
-                        res.send("車や電車が検出されませんでした。");
+                        res.send("車か電車の画像を送ってみると、、、");
                     }
                 }
             );
@@ -63,6 +63,6 @@ module.exports = (robot) => {
     });
 
     robot.respond('select', (res) => {
-        res.send(`あなたは ${res.json.options[res.json.response]} が好きなんですね.`);
+        res.send(`あなたは ${res.json.options[res.json.response]} が好きなんですね。`);
     });
 };

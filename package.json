@@ -18,7 +18,7 @@
   },
   "dependencies": {
     "clarifai-nodejs-grpc": "^10.6.3",
-    "forever": "^4.0.0",
+    "forever": "^1.0.1",
     "hubot-direct": ">=3 <4",
     "lisb-hubot": ">=5 <6",
     "lisb-hubot-redis-brain": "^1.0.0"
